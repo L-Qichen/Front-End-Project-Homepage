@@ -1,0 +1,289 @@
+/* reset css */
+*{box-sizing: border-box;}
+*::before, *::after{box-sizing: border-box;}
+*{margin:0; padding:0;}
+ul,ol{ list-style: none; }
+input,button{font-family: inherit; outline: none;}
+a{color: inherit; text-decoration: none;}
+img{max-width: 100%; max-height: 100%; border-radius: 50%;}
+
+/* style */
+body{ background: #EEEEEE; position: relative;min-height: 90vh;}
+
+.siteLogo{
+  width: 80px;
+  height: 80px;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+@media (min-width: 500px) {
+  .siteLogo{
+    margin-top: 50px;
+  }
+}
+.siteLogo > .icon{
+  width: 80px;
+  height: 80px;
+  color: #696969;
+}
+
+.siteHeader{
+  margin: 0 32px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 500px) {
+  .siteHeader{
+    max-width: 560px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+  }
+}
+
+.nav-bar{ 
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: #696969;
+}
+.navItem1, .navItem2, .navItem3{
+  cursor: pointer;
+}
+@media (min-width: 500px) {
+  .navItem1:hover, .navItem2:hover, .navItem3:hover{
+    color:#4285F4;
+  }
+}
+.siteHeader .nav-bar .search-engine-logo{
+  display: none;
+  padding-right: 4px;
+}
+.input-button{
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 500px) {
+  .input-button{
+    margin-top: 32px;
+  }
+}
+.siteHeader .input-button > input{
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #E7E7E7;
+  border-right: none;
+  border-radius: 40px;
+  transition-property: border, box-shadow;
+  transition-duration: .3s;
+}
+.siteHeader .input-button > input:focus{
+  border: 1px solid #4285F4;
+    box-shadow: 0 2px 10px #4285f43d;
+}
+.siteHeader .input-button > button{
+  background: #ffffff;
+  height: 30px;
+  margin: 5px;
+  border: none;
+  border-left: none;
+  border-radius: 0 40px 40px 0;
+  padding-right: 20px;
+  cursor: pointer;
+  transition-property: border, box-shadow;
+  transition-duration: .3s;
+  position: absolute;
+  align-self: flex-end;
+}
+.siteHeader .input-button > button:active{
+  border: 1px solid #4285F4;
+  background: #4285f43d;
+}
+.input-button > button::before{
+  border-left: 1px solid #e1e1e1;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  content: "";
+}
+@media (min-width: 500px) {
+  .input-button > button::before{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+.input-button > button > .icon{
+  width: 13px;
+  height: 13px;
+}
+
+.siteMain{
+  margin: 32px;
+  position: relative;
+}
+@media (min-width: 500px){
+  .siteMain{
+  max-width: 805px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+.siteList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (min-width: 500px){
+  .siteList{
+    margin-left: 0;
+    margin-right: -20px;
+    justify-content: flex-start;
+  }
+}
+.siteList > li{
+  margin-bottom: 20px;
+}
+@media(min-width: 500px){
+  .siteList > li {
+    margin-right: 20px;
+  }
+}
+.siteList .site, .addButton{
+  border: 1px solid #969696;
+  border-radius: 8px;
+  background: #e1e1e1;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 15px 0;
+  position: relative;
+  cursor: pointer;
+}
+@media(min-width: 500px){
+  .siteList .site, .addButton{
+    transition-property: border, box-shadow, transform;
+    transition-duration: .4s;
+  }
+  .siteList .site:hover, .addButton:hover {
+    box-shadow: 3px 3px 6px #969696;
+    transform: translateY(-3px);
+    border: 1px solid #4285F4;
+  }
+  .siteList .site:active, .addButton:active {
+    background: #4285f43d;
+  }
+}
+.siteList .site > .deleteSite{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+}
+@media(min-width: 500px){
+  .siteList .site > .deleteSite {
+    display: none;
+    border-radius: 100%;
+  }
+  .siteList .site:hover > .deleteSite{
+    display: block;
+  }
+  .siteList .site:hover > .deleteSite:hover{
+    background: #EEEEEE;
+  }
+  .siteList .site:hover > .deleteSite:active{
+    background-color: #ffffff;
+  }
+}
+.siteList .site .site-inner-container, .site-inner-container{
+  width: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.siteList .site-inner-container > .logo, .addIcon{
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 40px;
+}
+.siteList .site-inner-container > .name, .addName{
+  margin-top: 4px;
+  font-size: 14px;
+  color: #696969;
+}
+
+.addNewURL{
+  width: 72vw;
+  max-width: 512px;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 16px;
+}
+.addNewURL > .addNewURLTitle{
+  font-size: 18px;
+}
+.addNewURL > .addNewURLdetail{
+  color: #969696;
+  padding-top: 10px;
+}
+.addNewURL > input{
+  border: 1px solid #e1e1e1;
+  background: #E7E7E7;
+  height: 27px;
+  border-radius: 4px;
+  margin-top: 3px;
+}
+.addNewURL > .addNewURLButton{
+  display: flex;
+  justify-content: flex-end;
+  padding: 32px 0 10px 0;
+}
+.addNewURL > .addNewURLButton > button{
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  margin-left: 10px;
+  padding: 8px;
+  color: #696969;
+}
+.addNewURL > .addNewURLButton .add{
+  background: #4285F4;
+  border: 1px solid #4285F4;
+  color: #ffffff;
+}
+.cover{
+  background: rgba(0, 0, 0, 0.72);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  display: none;
+}
+
+.siteFooter{
+  font-size: 14px;
+  color: #909399;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
